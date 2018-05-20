@@ -1,7 +1,7 @@
 package com.company.levels;
 
 import com.company.Player;
-import com.company.geometry.AbstractEbbingShape;
+import com.company.geometry.ebbs.AbstractEbbingShape;
 import com.company.geometry.GoalArea;
 import com.company.geometry.NeutralArea;
 import com.company.Balance;
@@ -9,10 +9,10 @@ import com.company.Balance;
 import java.awt.*;
 
 public abstract class Level {
-    private Player player;
-    private AbstractEbbingShape[] ebbs;
-    private NeutralArea[] neutralZones;
-    private GoalArea goalArea;
+    protected Player player;
+    protected AbstractEbbingShape[] ebbs;
+    protected NeutralArea[] neutralZones;
+    protected GoalArea goalArea;
 
     public Level(Player player, AbstractEbbingShape[] ebbs, NeutralArea[] neutralZones, GoalArea goalArea){
         this.player = player;
@@ -52,7 +52,7 @@ public abstract class Level {
     public Player player() {return player;}
 
 
-    private Balance collisions(){
+    protected Balance collisions(){
 
         player.outOfGoal();
         if(goalArea.isColliding(player.position())) {

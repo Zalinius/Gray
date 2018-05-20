@@ -3,7 +3,9 @@ package com.company.architecture;
 import com.company.Player;
 import com.company.drawing.Background;
 import com.company.levels.Level;
+import com.company.levels.Level1;
 import com.company.levels.TestLevel;
+import com.company.levels.Tutorial;
 
 import java.awt.*;
 
@@ -21,8 +23,10 @@ public class LevelManager {
 
 
     public LevelManager(GameContainer gc){
-        levels = new Level[1];
-        levels[0] = new TestLevel();
+        levels = new Level[3];
+        levels[0] = new Tutorial();
+        levels[1] = new Level1();
+        levels[2] = new TestLevel();
 
         this.gc = gc;
 

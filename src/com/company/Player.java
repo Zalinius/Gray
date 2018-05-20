@@ -13,6 +13,8 @@ public class Player {
 
     private int PLAYER_DIAMETER = 30;
 
+    public static final double EASY_SHIFT = .25, MEDIUM_SHIFT = .4, HARD_SHIFT = .6;
+
     private Position p;
     private PlayerInput input;
     private boolean alive;
@@ -95,7 +97,7 @@ public class Player {
     }
 
     private void processMovement(double delta){
-        double speed = 100;
+        double speed = 150;
 
         if(input.x() != 0 && input.y() != 0)
             speed /= Math.sqrt(2);

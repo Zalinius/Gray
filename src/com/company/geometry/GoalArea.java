@@ -44,4 +44,8 @@ public class GoalArea {
     private Rectangle2D.Double getShape(){
         return new Rectangle2D.Double(p.x - width/2, p.y - width/2, width, width);
     }
+
+    public static GoalArea goalAreaFactory(Position p){
+        return new GoalArea(new Position(p.x, p.y), 75);
+    }
 }

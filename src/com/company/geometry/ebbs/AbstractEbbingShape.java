@@ -1,4 +1,4 @@
-package com.company.geometry;
+package com.company.geometry.ebbs;
 
 import com.company.utilities.BezierPoint;
 import com.company.utilities.Position;
