@@ -13,8 +13,11 @@ import java.awt.*;
 public class TestLevel extends Level {
 
     public TestLevel() {
-        super(new Player(new Position(50, 50 ), .5), null, new NeutralArea[0]);
+        super(new Player(new Position(50, 50 ), .5), null, new NeutralArea[1]);
         setEbbs(ebbs());
+        NeutralArea[] areas = new NeutralArea[1];
+        areas[0] = defaultNeutralArea();
+        setNeutrals(areas);
 
     }
 
@@ -35,6 +38,8 @@ public class TestLevel extends Level {
         ebbs[0] = new EbbingShape(b, Color.white);
         return ebbs;
     }
+
+
 
     @Override
     public void update(double delta) {
