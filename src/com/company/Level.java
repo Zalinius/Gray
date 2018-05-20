@@ -58,4 +58,5 @@ public abstract class Level {
         this.ebbs = ebbs;
     }
 
+    public abstract Level reset();
 }

@@ -2,17 +2,18 @@ package com.company.architecture;
 
 public class GameLoop {
     final int TARGET_FPS = 60;
+
     GameContainer gameContainer;
     LevelManager levelManager;
 
-    public GameLoop(LevelManager levelManager){
+    public GameLoop(GameContainer gameContainer, LevelManager levelManager){
+        this.gameContainer = gameContainer;
         this.levelManager = levelManager;
     }
 
 
     public void gameLoop()
     {
-        gameContainer = new GameContainer(levelManager);
         long lastLoopTime = System.nanoTime();
         final long OPTIMAL_TIME = 1000000000 / TARGET_FPS; //1 Second / 60 fps
 
@@ -27,6 +28,8 @@ public class GameLoop {
             long updateLength = now - lastLoopTime;
             lastLoopTime = now;
             double delta = updateLength / 1E9;
+
+            //System.out.print((lastLoopTime-System.nanoTime() + OPTIMAL_TIME)/1000000 + "\n");
 
             //System.out.print("FPS: " + 1/delta + "\n");
 
@@ -43,6 +46,9 @@ public class GameLoop {
             // remember this is in ms, whereas our lastLoopTime etc. vars are in ns.
             try{
                 Thread.sleep( (lastLoopTime-System.nanoTime() + OPTIMAL_TIME)/1000000 );
+            }
+            catch (IllegalArgumentException e){
+                e.printStackTrace();
             }
             catch (InterruptedException e) {
                 e.printStackTrace();

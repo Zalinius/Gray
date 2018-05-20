@@ -14,18 +14,25 @@ import java.awt.*;
  */
 public class LevelManager {
 
+    private GameContainer gc;
+
     private Level[] levels;
     private int activeLevel;
 
 
-    public LevelManager(){
+    public LevelManager(GameContainer gc){
         levels = new Level[1];
         levels[0] = new TestLevel();
-        activeLevel = 0;
+
+        this.gc = gc;
+
+        loadLevel(0);
     }
 
     public void update(double delta){
         levels[activeLevel].update(delta);
+        if(!levels[activeLevel].player().isAlive())
+            resetLevel();
     }
 
     public void render(Graphics2D g){
@@ -36,6 +43,16 @@ public class LevelManager {
 
     public Player player(){
         return levels[activeLevel].player();
+    }
+
+    private void loadLevel(int index){
+        activeLevel = index;
+        gc.addKeys(levels[activeLevel].player());
+    }
+
+    public void resetLevel(){
+        levels[activeLevel] = levels[activeLevel].reset();
+        gc.addKeys(levels[activeLevel].player());
     }
 
 }

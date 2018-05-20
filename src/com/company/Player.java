@@ -13,6 +13,7 @@ public class Player {
 
     private Position p;
     private PlayerInput input;
+    private boolean alive;
 
     private double balance; //Always between -1.0 and 1.0, inclusive
     private double balanceShift;
@@ -21,6 +22,8 @@ public class Player {
     public Player(Position p, double balanceShift){
         this.p = p;
         this.input = new PlayerInput();
+        this.alive = true;
+
         this.balance = 0.0;
         this.balanceState = Level.Balance.NEUTRAL;
         this.balanceShift = balanceShift;
@@ -34,7 +37,6 @@ public class Player {
         if(balance == -1.0 || balance == 1.0)
             playerDeath();
 
-        System.out.print("Balance: " + balance + "\n");
 
     }
 
@@ -126,9 +128,12 @@ public class Player {
     }
 
     private void playerDeath(){
-
+        alive = false;
     }
 
+    public boolean isAlive() {
+        return alive;
+    }
 }
 
 

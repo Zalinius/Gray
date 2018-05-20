@@ -45,4 +45,9 @@ public class TestLevel extends Level {
     public void render(Graphics2D g) {
         super.render(g);
     }
+
+    @Override
+    public Level reset() {
+        return new TestLevel();
+    }
 }
