@@ -17,7 +17,7 @@ public class GameContainer extends DoubleBufferedFrame{
         new GameContainer();
     }
 
-    public GameContainer() {
+    private GameContainer() {
         super("It's a Game!");
         setResizable(false);
         setSize(WIDTH, HEIGHT);
@@ -45,7 +45,7 @@ public class GameContainer extends DoubleBufferedFrame{
 
     }
 
-    public void addKeys(Player player){
+    void addKeys(Player player){
         addKeyListener(new InputListener(player));
     }
 }

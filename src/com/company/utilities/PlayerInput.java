@@ -1,6 +1,5 @@
 package com.company.utilities;
 
-import com.company.Player;
 
 public class PlayerInput {
 

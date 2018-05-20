@@ -8,7 +8,7 @@ public class DoubleBufferedFrame extends Frame {
     private Image bufferImage;
     private Graphics2D bufferGraphics;
 
-    public DoubleBufferedFrame(String title){
+    DoubleBufferedFrame(String title){
         super(title);
     }
 

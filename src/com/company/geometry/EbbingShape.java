@@ -2,7 +2,6 @@ package com.company.geometry;
 
 import com.company.utilities.BezierPoint;
 import java.awt.*;
-import java.awt.geom.GeneralPath;
 
 public class EbbingShape extends AbstractEbbingShape{
 

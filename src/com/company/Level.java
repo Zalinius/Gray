@@ -42,7 +42,7 @@ public abstract class Level {
     public Player player() {return player;}
 
 
-    enum Balance {DARK, NEUTRAL, LIGHT};
+    enum Balance {DARK, NEUTRAL, LIGHT}
 
 
     private Balance collisions(){

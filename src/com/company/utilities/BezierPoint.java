@@ -1,7 +1,5 @@
 package com.company.utilities;
 
-import java.time.Period;
-import java.util.Random;
 
 public class BezierPoint {
     public Position p;

@@ -12,7 +12,7 @@ public abstract class AbstractEbbingShape {
     protected BezierPoint[] p;
     private Color color;
 
-    public AbstractEbbingShape(BezierPoint[] p, Color color){
+    AbstractEbbingShape(BezierPoint[] p, Color color){
         this.p = p;
 
         this.color = color;
@@ -55,10 +55,7 @@ public abstract class AbstractEbbingShape {
         }
         path.closePath();
 
-        if(path.contains(new Point2D.Double(point.x, point.y)))
-            return true;
-        else
-            return false;
+        return path.contains(new Point2D.Double(point.x, point.y));
 
     }
 }

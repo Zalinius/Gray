@@ -47,10 +47,7 @@ public class GameLoop {
             try{
                 Thread.sleep( (lastLoopTime-System.nanoTime() + OPTIMAL_TIME)/1000000 );
             }
-            catch (IllegalArgumentException e){
-                e.printStackTrace();
-            }
-            catch (InterruptedException e) {
+            catch (IllegalArgumentException | InterruptedException e){
                 e.printStackTrace();
             }
 

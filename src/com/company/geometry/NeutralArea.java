@@ -1,13 +1,12 @@
 package com.company.geometry;
 
 import com.company.utilities.Position;
-
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
 
 public class NeutralArea {
-    Position p;
-    double diameter;
+    private Position p;
+    private double diameter;
 
     public NeutralArea(Position p, double diameter){
         this.p = new Position(p.x, p.y);
