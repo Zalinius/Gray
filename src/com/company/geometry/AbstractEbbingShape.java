@@ -9,7 +9,7 @@ import java.awt.geom.Point2D;
 
 public abstract class AbstractEbbingShape {
 
-    private BezierPoint[] p;
+    protected BezierPoint[] p;
     private Color color;
 
     public AbstractEbbingShape(BezierPoint[] p, Color color){
@@ -21,9 +21,7 @@ public abstract class AbstractEbbingShape {
     public void update(double delta){
 
         ebb(delta);
-/*        for(int i = 0; i != p.length; ++i){
-            p[i].update(delta);
-        }*/
+
     }
 
     public void render(Graphics2D g){
