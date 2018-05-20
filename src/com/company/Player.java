@@ -14,6 +14,7 @@ public class Player {
     private Position p;
     private PlayerInput input;
     private boolean alive;
+    private boolean isInGoal;
 
     private double balance; //Always between -1.0 and 1.0, inclusive
     private double balanceShift;
@@ -133,6 +134,16 @@ public class Player {
 
     public boolean isAlive() {
         return alive;
+    }
+
+    public boolean isNeutral() {return balance == 0.0;}
+
+    public void goal() {isInGoal = true;}
+
+    public void outOfGoal(){isInGoal = false;}
+
+    public boolean isInGoal(){
+        return isInGoal;
     }
 }
 

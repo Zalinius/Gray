@@ -33,7 +33,10 @@ public class LevelManager {
         levels[activeLevel].update(delta);
         if(!levels[activeLevel].player().isAlive())
             resetLevel();
+        if(levels[activeLevel].player().isInGoal() && levels[activeLevel].player().isNeutral())
+            nextLevel();
     }
+
 
     public void render(Graphics2D g){
         Background.drawBackground(g);
@@ -53,6 +56,11 @@ public class LevelManager {
     public void resetLevel(){
         levels[activeLevel] = levels[activeLevel].reset();
         gc.addKeys(levels[activeLevel].player());
+    }
+
+
+    private void nextLevel() {
+        loadLevel(activeLevel + 1);
     }
 
 }

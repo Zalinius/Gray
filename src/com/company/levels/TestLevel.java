@@ -4,6 +4,7 @@ import com.company.Level;
 import com.company.Player;
 import com.company.geometry.AbstractEbbingShape;
 import com.company.geometry.EbbingShape;
+import com.company.geometry.GoalArea;
 import com.company.geometry.NeutralArea;
 import com.company.utilities.BezierPoint;
 import com.company.utilities.Position;
@@ -13,7 +14,7 @@ import java.awt.*;
 public class TestLevel extends Level {
 
     public TestLevel() {
-        super(new Player(new Position(50, 50 ), .5), null, new NeutralArea[1]);
+        super(new Player(new Position(50, 50 ), .5), null, new NeutralArea[1], new GoalArea(new Position(700, 700), 64));
         setEbbs(ebbs());
         NeutralArea[] areas = new NeutralArea[1];
         areas[0] = defaultNeutralArea();
