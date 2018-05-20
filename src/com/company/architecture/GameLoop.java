@@ -1,7 +1,7 @@
 package com.company.architecture;
 
 public class GameLoop {
-    final int TARGET_FPS = 30;
+    final int TARGET_FPS = 60;
     GameContainer gameContainer;
     LevelManager levelManager;
 
@@ -28,6 +28,7 @@ public class GameLoop {
             lastLoopTime = now;
             double delta = updateLength / 1E9;
 
+            //System.out.print("FPS: " + 1/delta + "\n");
 
             // update the gameContainer logic
             levelManager.update(delta);

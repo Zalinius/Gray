@@ -28,6 +28,8 @@ public class Player {
         return input;
     }
 
+    public Position position(){return  position();}
+
     private void processMovement(double delta){
         double speed = 100;
         //TODO Clamp diagonal speed
