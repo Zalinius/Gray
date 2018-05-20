@@ -2,7 +2,7 @@ package com.company.architecture;
 
 import com.company.Player;
 import com.company.drawing.Background;
-import com.company.Level;
+import com.company.levels.Level;
 import com.company.levels.TestLevel;
 
 import java.awt.*;

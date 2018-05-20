@@ -1,8 +1,10 @@
 package com.company;
 
+import com.company.levels.Level;
 import com.company.utilities.PlayerInput;
 import com.company.utilities.Position;
 import com.company.utilities.ZMath;
+import com.company.levels.Level;
 
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
@@ -18,7 +20,7 @@ public class Player {
 
     private double balance; //Always between -1.0 and 1.0, inclusive
     private double balanceShift;
-    private Level.Balance balanceState;
+    private Balance balanceState;
 
     public Player(Position p, double balanceShift){
         this.p = p;
@@ -26,7 +28,7 @@ public class Player {
         this.alive = true;
 
         this.balance = 0.0;
-        this.balanceState = Level.Balance.NEUTRAL;
+        this.balanceState = Balance.NEUTRAL;
         this.balanceShift = balanceShift;
     }
 
@@ -124,7 +126,7 @@ public class Player {
         return new Color(darkness, darkness, darkness);
     }
 
-    public void playerLocation(Level.Balance location){
+    public void playerLocation(Balance location){
         this.balanceState = location;
     }
 

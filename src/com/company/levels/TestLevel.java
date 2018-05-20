@@ -1,6 +1,5 @@
 package com.company.levels;
 
-import com.company.Level;
 import com.company.Player;
 import com.company.geometry.AbstractEbbingShape;
 import com.company.geometry.EbbingShape;

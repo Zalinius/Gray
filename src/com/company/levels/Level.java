@@ -1,8 +1,10 @@
-package com.company;
+package com.company.levels;
 
+import com.company.Player;
 import com.company.geometry.AbstractEbbingShape;
 import com.company.geometry.GoalArea;
 import com.company.geometry.NeutralArea;
+import com.company.Balance;
 
 import java.awt.*;
 
@@ -48,9 +50,6 @@ public abstract class Level {
     }
 
     public Player player() {return player;}
-
-
-    enum Balance {DARK, NEUTRAL, LIGHT}
 
 
     private Balance collisions(){
