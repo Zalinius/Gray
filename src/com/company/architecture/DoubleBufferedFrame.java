@@ -2,7 +2,12 @@ package com.company.architecture;
 
 import java.awt.*;
 
-public class DoubleBufferedFrame extends Frame {
+/**
+ * This class extends the standard FRAME capabilities to allow double buffering when drawing to the screen.
+ * This is necessary to avoid severe flickering when rendering above 10 FPS.
+ * To create a screen based game, extend this class and implement the paintBuffer method to hold all rendering.
+ */
+public abstract class DoubleBufferedFrame extends Frame {
 
     private int bufferWidth, bufferHeight;
     private Image bufferImage;
@@ -13,11 +18,11 @@ public class DoubleBufferedFrame extends Frame {
     }
 
     //We are overriding this to enforce buffering
-    public void update(Graphics g){
+    public final void update(Graphics g){
         paint(g);
     }
 
-    public void paint(Graphics g){
+    public final void paint(Graphics g){
         if(bufferWidth!=getSize().width || bufferHeight!=getSize().height || bufferImage==null || bufferGraphics==null)
             resetBuffer();
 
@@ -35,11 +40,9 @@ public class DoubleBufferedFrame extends Frame {
 
     }
 
-    public void paintBuffer(Graphics2D g){
+    public abstract void paintBuffer(Graphics2D g);
 
-    }
-
-    private void resetBuffer(){
+    private final void resetBuffer(){
         // always keep track of the image size
         bufferWidth=getSize().width;
         bufferHeight=getSize().height;
