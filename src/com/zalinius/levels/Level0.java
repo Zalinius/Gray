@@ -2,13 +2,10 @@ package com.zalinius.levels;
 
 import com.zalinius.gameStuff.Player;
 import com.zalinius.architecture.GameContainer;
-import com.zalinius.geometry.ebbs.AbstractBezierShape;
 import com.zalinius.geometry.GoalArea;
 import com.zalinius.geometry.NeutralArea;
 import com.zalinius.geometry.ebbs.AbstractEbbingShape;
 import com.zalinius.utilities.Position;
-import javafx.geometry.Pos;
-
 import java.awt.*;
 
 public class Level0 extends Level{

@@ -9,7 +9,9 @@ import java.awt.*;
  */
 public abstract class DoubleBufferedFrame extends Frame {
 
-    private int bufferWidth, bufferHeight;
+	private static final long serialVersionUID = 1L;
+	
+	private int bufferWidth, bufferHeight;
     private Image bufferImage;
     private Graphics2D bufferGraphics;
 

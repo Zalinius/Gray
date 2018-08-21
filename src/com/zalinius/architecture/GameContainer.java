@@ -7,7 +7,10 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
 public class GameContainer extends DoubleBufferedFrame{
-    public static final int WIDTH = 1366, HEIGHT = 768;
+
+	private static final long serialVersionUID = 1L;
+
+	public static final int WIDTH = 1366, HEIGHT = 768;
 
     private GameLoop gameLoop;
     private LevelManager levelManager;

@@ -1,6 +1,5 @@
 package com.zalinius.geometry.ebbs;
 
-import com.zalinius.architecture.IGameObject;
 import com.zalinius.utilities.Position;
 import com.zalinius.utilities.ZMath;
 
