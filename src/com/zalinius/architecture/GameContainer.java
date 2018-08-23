@@ -20,11 +20,15 @@ public class GameContainer extends DoubleBufferedFrame{
     }
 
     private GameContainer() {
-        super("It's a Game!");
+        this("Game!", WIDTH, HEIGHT, Color.black);
+    }
+
+    private GameContainer(String windowText, int width, int height, Color backgroundColor) {
+    	super(windowText);
         setResizable(false);
-        setSize(WIDTH, HEIGHT);
+        setSize(width, height);
         setVisible(true);
-        setBackground(Color.black);
+        setBackground(backgroundColor);
 
         levelManager = new LevelManager(this);
         gameLoop = new GameLoop(this, levelManager);
@@ -41,7 +45,7 @@ public class GameContainer extends DoubleBufferedFrame{
 
         addKeyListener(new InputListener(levelManager.player()));
     }
-
+    
     public void paintBuffer(Graphics2D g){
         levelManager.render(g);
 
