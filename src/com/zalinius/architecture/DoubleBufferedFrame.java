@@ -36,7 +36,7 @@ public abstract class DoubleBufferedFrame extends Frame {
             //the offscreen graphics as a param
             paintBuffer(bufferGraphics);
 
-            //we finaly paint the offscreen image onto the onscreen image
+            //we finally paint the offscreen image onto the onscreen image
             g.drawImage(bufferImage,0,0,this);
         }
 

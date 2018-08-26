@@ -13,7 +13,7 @@ public class Level2 extends Level {
     private static final double BALANCE_SHIFT = Player.EASY_SHIFT;
 
     public Level2() {
-        super(new Player(new Position(100, GameContainer.HEIGHT / 2), BALANCE_SHIFT));
+        super(new Player(new Position(100, GameContainer.GAME_HEIGHT / 2), BALANCE_SHIFT));
 
     }
 
@@ -40,7 +40,7 @@ public class Level2 extends Level {
 
     @Override
     protected GoalArea setUpGoalAreas() {
-        return GoalArea.goalAreaFactory(new Position(1200, GameContainer.HEIGHT / 2));
+        return GoalArea.goalAreaFactory(new Position(1200, GameContainer.GAME_HEIGHT / 2));
     }
 
     @Override

@@ -5,6 +5,7 @@ import com.zalinius.utilities.Position;
 
 import java.awt.*;
 import java.awt.geom.GeneralPath;
+import java.awt.geom.Path2D;
 import java.awt.geom.Point2D;
 
 public abstract class AbstractBezierShape extends AbstractEbbingShape{
@@ -25,7 +26,7 @@ public abstract class AbstractBezierShape extends AbstractEbbingShape{
         super.render(g);
 
         //A close planar shape
-        GeneralPath path = new GeneralPath(GeneralPath.WIND_EVEN_ODD);
+        GeneralPath path = new GeneralPath(Path2D.WIND_EVEN_ODD);
         path.moveTo(p[0].x(), p[0].y());
 
         for(int i = 0; i != p.length; ++i){
@@ -42,7 +43,7 @@ public abstract class AbstractBezierShape extends AbstractEbbingShape{
 
     public boolean isColliding(Position point){
 
-        GeneralPath path = new GeneralPath(GeneralPath.WIND_EVEN_ODD);
+        GeneralPath path = new GeneralPath(Path2D.WIND_EVEN_ODD);
         path.moveTo(p[0].x(), p[0].y());
 
         for(int i = 0; i != p.length; ++i){

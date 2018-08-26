@@ -10,7 +10,7 @@ import java.awt.*;
 
 public class Level0 extends Level{
     public Level0(){
-        super(new Player( new Position(100, GameContainer.HEIGHT/2 ), Player.EASY_SHIFT) );
+        super(new Player( new Position(100, GameContainer.GAME_HEIGHT/2 ), Player.EASY_SHIFT) );
 
     }
 
@@ -28,7 +28,7 @@ public class Level0 extends Level{
     @Override
     protected NeutralArea[] setUpNeutralAreas() {
         NeutralArea[] neutrals = new NeutralArea[1];
-        neutrals[0] = new NeutralArea(new Position(GameContainer.WIDTH/2, GameContainer.HEIGHT/2), 2000);
+        neutrals[0] = new NeutralArea(new Position(GameContainer.GAME_WIDTH/2, GameContainer.GAME_HEIGHT/2), 2000);
         return neutrals;
     }
 
@@ -39,7 +39,7 @@ public class Level0 extends Level{
 
     @Override
     protected GoalArea setUpGoalAreas() {
-        Position goalPosition = new Position(1200, GameContainer.HEIGHT/2);
+        Position goalPosition = new Position(1200, GameContainer.GAME_HEIGHT/2);
         return GoalArea.goalAreaFactory(goalPosition);
     }
 

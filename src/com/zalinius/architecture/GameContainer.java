@@ -10,7 +10,7 @@ public class GameContainer extends DoubleBufferedFrame{
 
 	private static final long serialVersionUID = 1L;
 
-	public static final int WIDTH = 1366, HEIGHT = 768;
+	public static final int GAME_WIDTH = 1366, GAME_HEIGHT = 768;
 
     private GameLoop gameLoop;
     private LevelManager levelManager;
@@ -20,7 +20,7 @@ public class GameContainer extends DoubleBufferedFrame{
     }
 
     private GameContainer() {
-        this("Game!", WIDTH, HEIGHT, Color.black);
+        this("Game!", GAME_WIDTH, GAME_HEIGHT, Color.black);
     }
 
     private GameContainer(String windowText, int width, int height, Color backgroundColor) {

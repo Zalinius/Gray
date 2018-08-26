@@ -4,14 +4,14 @@ public class ZMath {
 
     public static double clamp(double value, double leftBoundary, double rightBoundary){
         assert (leftBoundary <= rightBoundary);
-
+        double clampedValue = value;
+        
         if(value < leftBoundary)
-            value = leftBoundary;
+        	clampedValue = leftBoundary;
         else if(value > rightBoundary)
-            value = rightBoundary;
+        	clampedValue = rightBoundary;
 
-
-        return value;
+        return clampedValue;
     }
 
     public static double oscillate(double amp, double x, double delta, double period, double x0){

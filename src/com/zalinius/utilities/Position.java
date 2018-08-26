@@ -10,17 +10,17 @@ public class Position {
         this.y = y;
     }
 
-    public void move(double x, double y){
-        this.x = x;
-        this.y = y;
+    public void move(double newX, double newY){
+        this.x = newX;
+        this.y = newY;
     }
 
     public static Position center(){
-        return new Position(GameContainer.WIDTH/2, GameContainer.HEIGHT/2);
+        return new Position(GameContainer.GAME_WIDTH/2, GameContainer.GAME_HEIGHT/2);
     }
 
     public static Position center(double width, double height){
-        return new Position((GameContainer.WIDTH - width)/2, (GameContainer.HEIGHT-height)/2);
+        return new Position((GameContainer.GAME_WIDTH - width)/2, (GameContainer.GAME_HEIGHT-height)/2);
     }
 
 }

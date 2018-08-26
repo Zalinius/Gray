@@ -26,7 +26,6 @@ public class MonoEbb extends AbstractEbbingShape {
 
     public void render(Graphics2D g){
         super.render(g);
-        System.out.print("diameter:" + diameter + " startDiameter:" + startDiameter + "\n");
         Ellipse2D oval = new Ellipse2D.Double(p.x - diameter/2, p.y - diameter/2, diameter, diameter);
         g.fill(oval);
     }
