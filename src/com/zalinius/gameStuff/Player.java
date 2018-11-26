@@ -1,20 +1,19 @@
 package com.zalinius.gameStuff;
 
-import com.zalinius.architecture.IGameObject;
+import com.zalinius.architecture.GameObject;
 import com.zalinius.utilities.PlayerInput;
-import com.zalinius.utilities.Position;
 import com.zalinius.utilities.ZMath;
-
+import com.zalinius.physics.Point2D;
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
 
-public class Player implements IGameObject {
+public class Player implements GameObject {
 
     private int PLAYER_DIAMETER = 30;
 
     public static final double EASY_SHIFT = .25, MEDIUM_SHIFT = .4, HARD_SHIFT = .6;
 
-    private Position p;
+    private Point2D p;
     private PlayerInput input;
     private boolean alive;
     private boolean isInGoal;
@@ -23,7 +22,7 @@ public class Player implements IGameObject {
     private double balanceShift;
     private Balance balanceState;
 
-    public Player(Position p, double balanceShift){
+    public Player(Point2D p, double balanceShift){
         this.p = p;
         this.input = new PlayerInput();
         this.alive = true;
@@ -91,7 +90,7 @@ public class Player implements IGameObject {
 
     }
 
-    public Position position(){
+    public Point2D position(){
         return p;
     }
 
@@ -101,8 +100,9 @@ public class Player implements IGameObject {
         if(input.x() != 0 && input.y() != 0)
             speed /= Math.sqrt(2);
 
-        p.x += speed * input.x() * delta;
-        p.y += speed * input.y() * delta;
+        double x = p.x + speed * input.x() * delta;
+        double y = p.y + speed * input.y() * delta;
+        p = new Point2D(x, y);
     }
 
     private Color getLightColor(){

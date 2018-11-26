@@ -1,16 +1,16 @@
 package com.zalinius.geometry.ebbs;
 
-import com.zalinius.utilities.Position;
+import com.zalinius.physics.Point2D;
 
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
 
 public class OvalEbbless extends AbstractEbbingShape{
 
-    private Position p;
+    private Point2D p;
     private double width, height;
 
-    public OvalEbbless(Position p, double width, double height){
+    public OvalEbbless(Point2D p, double width, double height){
         super(Color.white);
         this.p = p;
         this.width = width;
@@ -29,7 +29,7 @@ public class OvalEbbless extends AbstractEbbingShape{
     }
 
     @Override
-    public boolean isColliding(Position point) {
+    public boolean isColliding(Point2D point) {
         Ellipse2D oval = new Ellipse2D.Double(p.x, p.y, width, height);
         return oval.contains(point.x, point.y);
     }

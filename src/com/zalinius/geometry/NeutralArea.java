@@ -1,15 +1,16 @@
 package com.zalinius.geometry;
 
-import com.zalinius.utilities.Position;
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
 
+import com.zalinius.physics.Point2D;
+
 public class NeutralArea {
-    private Position p;
+    private Point2D p;
     private double diameter;
 
-    public NeutralArea(Position p, double diameter){
-        this.p = new Position(p.x, p.y);
+    public NeutralArea(Point2D p, double diameter){
+        this.p = new Point2D(p.x, p.y);
         this.diameter = diameter;
 
     }
@@ -23,7 +24,7 @@ public class NeutralArea {
         g.fill(new Ellipse2D.Double(p.x - diameter/2, p.y - diameter/2, diameter, diameter));
     }
 
-    public boolean isColliding(Position point){
+    public boolean isColliding(Point2D point){
         Ellipse2D area = new Ellipse2D.Double(p.x - diameter/2, p.y - diameter/2, diameter, diameter);
         return area.contains(point.x, point.y);
     }

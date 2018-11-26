@@ -1,15 +1,15 @@
 package com.zalinius.geometry;
 
-import com.zalinius.utilities.Position;
+import com.zalinius.physics.Point2D;
 
 import java.awt.*;
 import java.awt.geom.Rectangle2D;
 
 public class GoalArea {
-    private Position p;
+    private Point2D p;
     private int width;
 
-    public GoalArea(Position p, int width) {
+    public GoalArea(Point2D p, int width) {
         this.p = p;
         this.width = width;
     }
@@ -37,7 +37,7 @@ public class GoalArea {
 
     }
 
-    public boolean isColliding(Position point) {
+    public boolean isColliding(Point2D point) {
         return getShape().contains(point.x, point.y);
     }
 
@@ -45,7 +45,7 @@ public class GoalArea {
         return new Rectangle2D.Double(p.x - width/2, p.y - width/2, width, width);
     }
 
-    public static GoalArea goalAreaFactory(Position p){
-        return new GoalArea(new Position(p.x, p.y), 75);
+    public static GoalArea goalAreaFactory(Point2D p){
+        return new GoalArea(new Point2D(p.x, p.y), 75);
     }
 }

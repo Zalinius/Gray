@@ -1,12 +1,12 @@
 package com.zalinius.levels;
 
 import com.zalinius.gameStuff.Player;
-import com.zalinius.architecture.GameContainer;
+import com.zalinius.architecture.GameStage;
 import com.zalinius.geometry.GoalArea;
 import com.zalinius.geometry.NeutralArea;
 import com.zalinius.geometry.ebbs.AbstractEbbingShape;
 import com.zalinius.geometry.ebbs.OvalEbbless;
-import com.zalinius.utilities.Position;
+import com.zalinius.physics.Point2D;
 
 import java.awt.*;
 
@@ -14,7 +14,7 @@ public class Level1 extends Level {
     private static final double BALANCE_SHIFT = Player.EASY_SHIFT;
 
     public Level1() {
-        super(new Player(new Position(100, GameContainer.GAME_HEIGHT / 2), BALANCE_SHIFT));
+        super(new Player(new Point2D(100, GameStage.GAME_HEIGHT / 2), BALANCE_SHIFT));
 
     }
 
@@ -40,14 +40,14 @@ public class Level1 extends Level {
     protected AbstractEbbingShape[] setUpEbbs() {
         AbstractEbbingShape[] ebbs = new AbstractEbbingShape[1];
         double width = 300, height = 200;
-        ebbs[0] = new OvalEbbless(Position.center(width,height), width, height);
+        ebbs[0] = new OvalEbbless(new Point2D(GameStage.GAME_WIDTH/2, GameStage.GAME_HEIGHT/2), width, height);
 
         return ebbs;
     }
 
     @Override
     protected GoalArea setUpGoalAreas() {
-        return GoalArea.goalAreaFactory(new Position(1200, GameContainer.GAME_HEIGHT / 2));
+        return GoalArea.goalAreaFactory(new Point2D(1200, GameStage.GAME_HEIGHT / 2));
     }
 
     @Override
