@@ -1,8 +1,7 @@
 package com.zalinius.geometry.ebbs;
 
-import com.zalinius.architecture.ICollidable;
-import com.zalinius.architecture.IGameObject;
-import com.zalinius.utilities.Position;
+import com.zalinius.architecture.GameObject;
+import com.zalinius.physics.Point2D;
 
 import java.awt.*;
 
@@ -11,7 +10,7 @@ import java.awt.*;
  * In theory, it changes shape every frame.
  * It's collider should as well.
  */
-public abstract class AbstractEbbingShape implements IGameObject, ICollidable {
+public abstract class AbstractEbbingShape implements GameObject {
     private Color color;
 
     public AbstractEbbingShape(Color color){
@@ -34,5 +33,5 @@ public abstract class AbstractEbbingShape implements IGameObject, ICollidable {
      */
     protected abstract void ebb(double delta);
 
-    public abstract boolean isColliding(Position point);
+    public abstract boolean isColliding(Point2D point);
 }

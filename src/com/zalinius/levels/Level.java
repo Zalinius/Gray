@@ -1,6 +1,6 @@
 package com.zalinius.levels;
 
-import com.zalinius.architecture.IGameObject;
+import com.zalinius.architecture.GameObject;
 import com.zalinius.gameStuff.Player;
 import com.zalinius.geometry.GoalArea;
 import com.zalinius.geometry.NeutralArea;
@@ -9,7 +9,7 @@ import com.zalinius.geometry.ebbs.AbstractEbbingShape;
 
 import java.awt.*;
 
-public abstract class Level implements IGameObject {
+public abstract class Level implements GameObject {
     private Player player;
     private AbstractEbbingShape[] ebbs;
     private NeutralArea[] neutralAreas;

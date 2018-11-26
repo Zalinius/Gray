@@ -18,5 +18,4 @@ public class BezierShape extends AbstractBezierShape {
         }
     }
 
-
 }

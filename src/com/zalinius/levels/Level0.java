@@ -1,16 +1,17 @@
 package com.zalinius.levels;
 
+import java.awt.Graphics2D;
+
+import com.zalinius.architecture.GameStage;
 import com.zalinius.gameStuff.Player;
-import com.zalinius.architecture.GameContainer;
 import com.zalinius.geometry.GoalArea;
 import com.zalinius.geometry.NeutralArea;
 import com.zalinius.geometry.ebbs.AbstractEbbingShape;
-import com.zalinius.utilities.Position;
-import java.awt.*;
+import com.zalinius.physics.Point2D;
 
 public class Level0 extends Level{
     public Level0(){
-        super(new Player( new Position(100, GameContainer.GAME_HEIGHT/2 ), Player.EASY_SHIFT) );
+        super(new Player( new Point2D(100, GameStage.GAME_HEIGHT/2 ), Player.EASY_SHIFT) );
 
     }
 
@@ -28,7 +29,7 @@ public class Level0 extends Level{
     @Override
     protected NeutralArea[] setUpNeutralAreas() {
         NeutralArea[] neutrals = new NeutralArea[1];
-        neutrals[0] = new NeutralArea(new Position(GameContainer.GAME_WIDTH/2, GameContainer.GAME_HEIGHT/2), 2000);
+        neutrals[0] = new NeutralArea(new Point2D(GameStage.GAME_WIDTH/2, GameStage.GAME_HEIGHT/2), 2000);
         return neutrals;
     }
 
@@ -39,8 +40,8 @@ public class Level0 extends Level{
 
     @Override
     protected GoalArea setUpGoalAreas() {
-        Position goalPosition = new Position(1200, GameContainer.GAME_HEIGHT/2);
-        return GoalArea.goalAreaFactory(goalPosition);
+        Point2D goalPoint2D = new Point2D(1200, GameStage.GAME_HEIGHT/2);
+        return GoalArea.goalAreaFactory(goalPoint2D);
     }
 
     @Override

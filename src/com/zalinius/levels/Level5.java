@@ -7,14 +7,14 @@ import com.zalinius.geometry.ebbs.BezierShape;
 import com.zalinius.geometry.GoalArea;
 import com.zalinius.geometry.NeutralArea;
 import com.zalinius.utilities.BezierPoint;
-import com.zalinius.utilities.Position;
+import com.zalinius.physics.Point2D;
 
 import java.awt.*;
 
 public class Level5 extends Level {
     private static final double BALANCE_SHIFT = Player.MEDIUM_SHIFT;
     public Level5() {
-        super(new Player(new Position(50, 50 ), BALANCE_SHIFT));
+        super(new Player(new Point2D(50, 50 ), BALANCE_SHIFT));
     }
 
     @Override
@@ -36,10 +36,10 @@ public class Level5 extends Level {
     protected AbstractEbbingShape[] setUpEbbs() {
         AbstractBezierShape[] ebbs = new AbstractBezierShape[1];
 
-        BezierPoint b0 = new BezierPoint(new Position(50, 50), new Position(100, 40), new Position(0, 60));
-        BezierPoint b1 = new BezierPoint(new Position(150, 400), new Position(170, 350), new Position(130, 450));
-        BezierPoint b2 = new BezierPoint(new Position(600, 700), new Position(500, 700), new Position(700, 700));
-        BezierPoint b3 = new BezierPoint(new Position(750, 100), new Position(700, 120), new Position(800, 10));
+        BezierPoint b0 = new BezierPoint(new Point2D(50, 50), new Point2D(100, 40), new Point2D(0, 60));
+        BezierPoint b1 = new BezierPoint(new Point2D(150, 400), new Point2D(170, 350), new Point2D(130, 450));
+        BezierPoint b2 = new BezierPoint(new Point2D(600, 700), new Point2D(500, 700), new Point2D(700, 700));
+        BezierPoint b3 = new BezierPoint(new Point2D(750, 100), new Point2D(700, 120), new Point2D(800, 10));
 
         BezierPoint[] b = new BezierPoint[4];
         b[0] = b0;
@@ -53,7 +53,7 @@ public class Level5 extends Level {
 
     @Override
     protected GoalArea setUpGoalAreas() {
-        return GoalArea.goalAreaFactory(new Position(1200, 700));
+        return GoalArea.goalAreaFactory(new Point2D(1200, 700));
     }
 
     @Override

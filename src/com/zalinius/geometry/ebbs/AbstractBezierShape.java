@@ -1,12 +1,11 @@
 package com.zalinius.geometry.ebbs;
 
 import com.zalinius.utilities.BezierPoint;
-import com.zalinius.utilities.Position;
+import com.zalinius.physics.Point2D;
 
 import java.awt.*;
 import java.awt.geom.GeneralPath;
 import java.awt.geom.Path2D;
-import java.awt.geom.Point2D;
 
 public abstract class AbstractBezierShape extends AbstractEbbingShape{
 
@@ -41,7 +40,7 @@ public abstract class AbstractBezierShape extends AbstractEbbingShape{
         return  p;
     }
 
-    public boolean isColliding(Position point){
+    public boolean isColliding(Point2D point){
 
         GeneralPath path = new GeneralPath(Path2D.WIND_EVEN_ODD);
         path.moveTo(p[0].x(), p[0].y());
@@ -51,7 +50,7 @@ public abstract class AbstractBezierShape extends AbstractEbbingShape{
         }
         path.closePath();
 
-        return path.contains(new Point2D.Double(point.x, point.y));
+        return path.contains(new java.awt.geom.Point2D.Double(point.x, point.y));
 
     }
 }

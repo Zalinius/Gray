@@ -1,17 +1,17 @@
 package com.zalinius.geometry.ebbs;
 
-import com.zalinius.utilities.Position;
-import com.zalinius.utilities.ZMath;
+import com.zalinius.physics.Point2D;
+import com.zalinius.utilities.EbbMath;
 
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
 
 public class MonoEbb extends AbstractEbbingShape {
 
-    private Position p;
+    private Point2D p;
     private int startDiameter, diameter;
 
-    public MonoEbb(Position p, int diameter){
+    public MonoEbb(Point2D p, int diameter){
         super(Color.white);
         this.p = p;
         this.startDiameter = diameter;
@@ -32,10 +32,10 @@ public class MonoEbb extends AbstractEbbingShape {
 
     private double amp = Math.random()*20 + 90;
     protected void ebb(double delta) {
-        diameter = (int)ZMath.oscillate(amp, diameter, time, 7, startDiameter);
+        diameter = (int)EbbMath.oscillate(amp, diameter, time, 7, startDiameter);
     }
 
-    public boolean isColliding(Position point){
+    public boolean isColliding(Point2D point){
         Ellipse2D oval = new Ellipse2D.Double(p.x - diameter/2, p.y - diameter/2, diameter, diameter);
         return oval.contains(point.x, point.y);
     }
