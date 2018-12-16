@@ -1,6 +1,6 @@
 package com.zalinius.levels;
 
-import java.awt.Graphics2D;
+import java.awt.*;
 
 import com.zalinius.architecture.GameStage;
 import com.zalinius.gameStuff.Player;
@@ -23,6 +23,7 @@ public class Level0 extends Level{
     @Override
     public void render(Graphics2D g) {
         super.render(g);
+        g.setColor(Color.BLACK);
         g.drawString("Neutrality is Balance",500, 100);
     }
 
