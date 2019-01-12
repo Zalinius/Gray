@@ -168,16 +168,16 @@ public class Player implements GameObject {
     		GregorianCalendar cal = new GregorianCalendar();
     		int month = cal.get(Calendar.MONTH);
     		int day = cal.get(Calendar.DAY_OF_MONTH);
-    		System.out.println(month + " " + day);
-    		
-    		if(month == Calendar.DECEMBER && day == 25) {
-    			System.out.println("Christmas!");
 
+    		if(month == Calendar.DECEMBER && day == 25) {
         		this.light = new Color(220, 0, 0);
         		this.dark = new Color(0, 150, 70);
     		}
+    		else if(month == Calendar.MARCH && day == 17) {
+        		this.light = new Color(255, 215, 0);
+        		this.dark = new Color(0, 150, 70);
+    		}
     		else if(month == Calendar.OCTOBER && day == 31) {
-    			System.out.println("Halloween");
     			this.light = new Color(255, 140, 0);
     			this.dark = new Color(0, 0, 0);
     		}
